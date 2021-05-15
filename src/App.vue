@@ -1,17 +1,22 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <main>
+    <router-view></router-view>
+  </main>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import { provide } from "vue";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  setup() {
+    const userDatas = [
+      { userId: 0, userName: "Kai example 000" },
+      { userId: 1, userName: "Kai example 001" },
+      { userId: 2, userName: "Kai example 002" },
+    ];
+    provide("userDatas", userDatas);
+  },
+};
 </script>
 
 <style>
